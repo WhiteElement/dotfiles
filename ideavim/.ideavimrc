@@ -8,6 +8,7 @@ set number
 " text scroll if you mouse-click near the start or end of the window.
 set scrolloff=5
 
+" improving searching
 set hlsearch                      " highlight search occurrences
 set ignorecase                    " ignore case in search patterns
 set smartcase                     " no ignore case when pattern is uppercase
@@ -33,18 +34,26 @@ nmap <S-K> <action>(ShowHoverInfo)
 " Harpoon: attach a File
 nmap <leader>a <action>(org.intellij.sdk.action.attachFile)
 
+" open ProjectWindow
 nmap <leader>pv <action>(ActivateProjectToolWindow)
 
+" moving selected Text
 xmap <S-K> <action>(MoveStatementUp)
 xmap <S-J> <action>(MoveStatementDown)
 
+" show local history
 nmap <leader>u <action>(LocalHistory.ShowHistory)
+
+" searching 
+nmap <leader>pf <action>(GotoFile)
+nmap <leader>ps <action>(SpeedSearch)
 
 " --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
 
 " Highlight copied text
 Plug 'machakann/vim-highlightedyank'
 " Commentary plugin
+nmap <leader>pf <action>(GotoFile)
 Plug 'tpope/vim-commentary'
 
 
