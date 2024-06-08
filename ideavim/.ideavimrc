@@ -38,6 +38,8 @@ nmap <leader>pv <action>(ActivateProjectToolWindow)
 xmap <S-K> <action>(MoveStatementUp)
 xmap <S-J> <action>(MoveStatementDown)
 
+nmap <leader>u <action>(LocalHistory.ShowHistory)
+
 " --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
 
 " Highlight copied text
