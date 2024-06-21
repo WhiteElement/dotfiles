@@ -1,56 +1,57 @@
-" Source your .vimrc
-source ~/.vimrc
-
-" ///////////////////////////////////////////////////////////////////////////
-" ///////////////////////////////////////////////////////////////////////////
 " SETUP
+" ------------------------------------------------------------------------------------------------
 let mapleader = " "         " Remap Leader
 
 set relativenumber          " Show relative number
 set number                  " Show number
 
 set scrolloff=5             " always show 5 lines when scrolling
-" ///////////////////////////////////////////////////////////////////////////
+
+
+
 " SEARCH / NAVIGATION
+" ------------------------------------------------------------------------------------------------
 set hlsearch                                                " highlight search occurrences
 set ignorecase                                              " ignore case in search patterns
 set smartcase                                               " no ignore case when pattern is uppercase
 set incsearch                                               " show search results while typing
 set wrapscan                                                " searches wrap around the end of the file
 
-nmap <leader>pf <action>(GotoFile)                          " Project > Search File
-nmap <leader>ps <action>(FindInPath)                        " Project > Search (Grep)
-nmap <leader>pv <action>(ActivateProjectToolWindow)         " Project > View
+nmap <leader>pf <action>(GotoFile)
+nmap <leader>ps <action>(FindInPath)
+nmap <leader>pv <action>(ActivateProjectToolWindow)
 
-" -----------------------------------------------------------------------------
-" ///////////////////////////////////////////////////////////////////////////
-" ///////////////////////////////////////////////////////////////////////////
+
+
 " MOVING
+" ------------------------------------------------------------------------------------------------
 noremap <C-d> <C-d>zz       " Half Page Jump + Recenter
 noremap <C-u> <C-u>zz       " Half Page Jump + Recenter
-" -----------------------------------------------------------------------------
-" ///////////////////////////////////////////////////////////////////////////
-" ///////////////////////////////////////////////////////////////////////////
+
+
+
 " COPY PASTA
+" ------------------------------------------------------------------------------------------------
 map <leader>y "+y               
 vmap <leader>y "+y
 map <leader>Y "+Y    
  
-xnoremap <leader>p "_dP        
-vmap <leader>P "_d"+p
-" -----------------------------------------------------------------------------
-" ///////////////////////////////////////////////////////////////////////////
-" ///////////////////////////////////////////////////////////////////////////
+xnoremap <leader>p "\"_dP        
+xnoremap <leader>P \"+p
+
+
+
 " MISC
-nmap <S-K> <action>(ShowHoverInfo)                      " Map K in normal mode to trigger the QuickDoc command
-nmap <leader>u <action>(LocalHistory.ShowHistory)       " show local history
-xmap <S-K> <action>(MoveStatementUp)                    " moving selected Text
-xmap <S-J> <action>(MoveStatementDown)                  " moving selected Text
-" -----------------------------------------------------------------------------
-" ///////////////////////////////////////////////////////////////////////////
-" ///////////////////////////////////////////////////////////////////////////
+" ------------------------------------------------------------------------------------------------
+nmap <S-K> <action>(ShowHoverInfo)
+nmap <leader>u <action>(LocalHistory.ShowHistory)
+xmap <S-K> <action>(MoveStatementUp)
+xmap <S-J> <action>(MoveStatementDown)
+
+
+
 " PLUGINS
-nmap <leader>a <action>(org.intellij.sdk.action.attachFile)         " Harpoon: attach a File
+nmap <leader>a <action>(org.intellij.sdk.action.attachFile)
 " -----------------------------------------------------------------------------
 
 
