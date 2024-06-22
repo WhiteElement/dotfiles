@@ -50,6 +50,7 @@ xmap <S-J> <action>(MoveStatementDown)
 nmap <leader><CR> <action>(ShowIntentionActions) 
 nmap <leader>q <action>(HideAllWindows)
 imap <C-,> <action>(ParameterInfo)
+nmap <leader>b <action>(ToggleLineBreakpoint)
 
 
 " PLUGINS
