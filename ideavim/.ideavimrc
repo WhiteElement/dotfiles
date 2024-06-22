@@ -1,21 +1,21 @@
 " SETUP
 " ------------------------------------------------------------------------------------------------
-let mapleader = " "         " Remap Leader
+let mapleader = " "
 
-set relativenumber          " Show relative number
-set number                  " Show number
+set relativenumber
+set number
 
-set scrolloff=5             " always show 5 lines when scrolling
+set scrolloff=5
 
 
 
 " SEARCH / NAVIGATION
 " ------------------------------------------------------------------------------------------------
-set hlsearch                                                " highlight search occurrences
-set ignorecase                                              " ignore case in search patterns
-set smartcase                                               " no ignore case when pattern is uppercase
-set incsearch                                               " show search results while typing
-set wrapscan                                                " searches wrap around the end of the file
+set hlsearch
+set ignorecase
+set smartcase
+set incsearch
+set wrapscan
 
 nmap <leader>pf <action>(GotoFile)
 nmap <leader>ps <action>(FindInPath)
@@ -25,8 +25,8 @@ nmap <leader>pv <action>(ActivateProjectToolWindow)
 
 " MOVING
 " ------------------------------------------------------------------------------------------------
-noremap <C-d> <C-d>zz       " Half Page Jump + Recenter
-noremap <C-u> <C-u>zz       " Half Page Jump + Recenter
+noremap <C-d> <C-d>zz
+noremap <C-u> <C-u>zz
 
 
 
