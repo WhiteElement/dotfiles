@@ -47,7 +47,9 @@ nmap <S-K> <action>(ShowHoverInfo)
 nmap <leader>u <action>(LocalHistory.ShowHistory)
 xmap <S-K> <action>(MoveStatementUp)
 xmap <S-J> <action>(MoveStatementDown)
-
+nmap <leader><CR> <action>(ShowIntentionActions) 
+nmap <leader>q <action>(HideAllWindows)
+imap <C-,> <action>(ParameterInfo)
 
 
 " PLUGINS
