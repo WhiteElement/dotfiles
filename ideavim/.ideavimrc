@@ -9,7 +9,7 @@ set scrolloff=5
 
 
 
-" SEARCH / NAVIGATION
+"SEARCH / NAVIGATION
 " ------------------------------------------------------------------------------------------------
 set hlsearch
 set ignorecase
@@ -17,11 +17,16 @@ set smartcase
 set incsearch
 set wrapscan
 
-nmap <leader>pf <action>(GotoFile)
-nmap <leader>ps <action>(FindInPath)
+nmap <leader>sf <action>(GotoFile)
+nmap <leader>sg <action>(FindInPath)
 nmap <leader>pv <action>(ActivateProjectToolWindow)
 
-
+" WINDOW
+" ------------------------------------------------------------------------------------------------
+map <leader>ws <action>(SplitHorizontally)
+map <leader>wv <action>(SplitVertically)
+map <leader>wq <action>(CloseContent)
+" move windows !!!
 
 " MOVING
 " ------------------------------------------------------------------------------------------------
@@ -51,6 +56,7 @@ nmap <leader><CR> <action>(ShowIntentionActions)
 nmap <leader>q <action>(HideAllWindows)
 imap <C-,> <action>(ParameterInfo)
 nmap <leader>b <action>(ToggleLineBreakpoint)
+map <leader>rn <action>(RenameElement)
 
 
 " PLUGINS
@@ -66,3 +72,6 @@ Plug 'tpope/vim-commentary'
 set NERDTree
 let g:NERDTreeMapActivateNode='l'
 let g:NERDTreeMapJumpParent='h'
+let g:NERDTreeMapNewFile='%'
+let g:NERDTreeMapNewDir='d'
+let g:NERDTreeMapDelete='D'
