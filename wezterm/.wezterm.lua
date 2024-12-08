@@ -2,40 +2,27 @@
 local wezterm = require("wezterm")
 
 return {
-	-- colorscheme
-	color_scheme = "Gruvbox dark, hard (base16)",
 
-	-- window
-	initial_rows = 40, -- Optional: you can also set these based on your preference
-	initial_cols = 100, -- Optional
-	window_padding = { left = 0, right = 0, top = 0, bottom = 0 }, -- Optional padding
-
-	-- Set Git Bash as the default shell
-	default_prog = { "C:\\Program Files\\Git\\bin\\bash.exe" },
+	color_scheme = "Catppuccin Macchiato",
+	-- font = wezterm.font("JetBrains Mono NL"),
+	font_size = 16,
 
 	-- Define leader key
 	leader = { key = "w", mods = "ALT", timeout_milliseconds = 1000 },
 
 	keys = {
-		-- Split horizontally with Alt+w+s
-		{ key = "v", mods = "LEADER", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+		{ key = "|", mods = "LEADER", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+		{ key = "-", mods = "LEADER", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
 
-		-- Split vertically with Alt+w+v
-		{ key = "s", mods = "LEADER", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
-
-		-- Close current pane with Alt+w+q
 		{ key = "q", mods = "LEADER", action = wezterm.action.CloseCurrentPane({ confirm = true }) },
 
-		-- Navigate panes with LEADER modifier
 		{ key = "h", mods = "LEADER", action = wezterm.action.ActivatePaneDirection("Left") }, -- Move left
 		{ key = "l", mods = "LEADER", action = wezterm.action.ActivatePaneDirection("Right") }, -- Move right
 		{ key = "k", mods = "LEADER", action = wezterm.action.ActivatePaneDirection("Up") }, -- Move up
 		{ key = "j", mods = "LEADER", action = wezterm.action.ActivatePaneDirection("Down") },
 
-		-- Create a new tab with Alt+w+n
-		{ key = "n", mods = "LEADER", action = wezterm.action.SpawnTab("DefaultDomain") },
+		{ key = "c", mods = "LEADER", action = wezterm.action.SpawnTab("DefaultDomain") },
 
-		-- Rename a tab
 		{
 			key = "r",
 			mods = "LEADER",
@@ -49,7 +36,9 @@ return {
 			}),
 		},
 
-		-- Switch between windows using Alt+w+1, Alt+w+2, etc.
+		{ key = "w", mods = "LEADER", action = wezterm.action.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
+		{ key = "n", mods = "LEADER", action = wezterm.action.SwitchWorkspaceRelative(1) },
+
 		{ key = "1", mods = "LEADER", action = wezterm.action.ActivateTab(0) },
 		{ key = "2", mods = "LEADER", action = wezterm.action.ActivateTab(1) },
 		{ key = "3", mods = "LEADER", action = wezterm.action.ActivateTab(2) },
@@ -61,5 +50,33 @@ return {
 		{ key = "9", mods = "LEADER", action = wezterm.action.ActivateTab(8) },
 		{ key = "0", mods = "LEADER", action = wezterm.action.ActivateTab(9) },
 	},
-}
 
+	-- tab bar
+	hide_tab_bar_if_only_one_tab = false,
+	tab_bar_at_bottom = true,
+	use_fancy_tab_bar = false,
+	tab_and_split_indices_are_zero_based = false,
+
+	-- tmux status
+	wezterm.on("update-right-status", function(window, _)
+		local SOLID_LEFT_ARROW = ""
+		local ARROW_FOREGROUND = { Foreground = { Color = "#c6a0f6" } }
+		local prefix = ""
+
+		if window:leader_is_active() then
+			prefix = " " .. utf8.char(0x1f30a) -- ocean wave
+			SOLID_LEFT_ARROW = utf8.char(0xe0b2)
+		end
+
+		if window:active_tab():tab_id() ~= 0 then
+			ARROW_FOREGROUND = { Foreground = { Color = "#1e2030" } }
+		end -- arrow color based on if tab is first pane
+
+		window:set_left_status(wezterm.format({
+			{ Background = { Color = "#b7bdf8" } },
+			{ Text = prefix },
+			ARROW_FOREGROUND,
+			{ Text = SOLID_LEFT_ARROW },
+		}))
+	end),
+}
