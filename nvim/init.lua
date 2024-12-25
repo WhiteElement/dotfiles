@@ -3,10 +3,10 @@
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.g.zig_fmt_autosave = 0
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = false
+vim.g.zig_fmt_autosave = 0
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
@@ -65,6 +65,9 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+vim.o.tabstop = 4 -- Number of spaces that a tab counts for
+vim.o.shiftwidth = 4 -- Number of spaces used for autoindent
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -87,6 +90,13 @@ vim.keymap.set("n", "<leader>wh", "<C-w><C-h>", { desc = "Move focus to the left
 vim.keymap.set("n", "<leader>wl", "<C-w><C-l>", { desc = "Move focus to the right window" })
 vim.keymap.set("n", "<leader>wj", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<leader>wk", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+
+-- Yank to system clipboard in all modes
+vim.keymap.set("", "<leader>y", '"+y', { noremap = true })
+-- Yank to system clipboard in visual mode
+vim.keymap.set("v", "<leader>y", '"+y', { noremap = true })
+-- Yank the entire line to system clipboard in all modes
+vim.keymap.set("", "<leader>Y", '"+Y', { noremap = true })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -660,7 +670,6 @@ require("lazy").setup({
 			vim.cmd.colorscheme("carbonfox")
 		end,
 	},
-
 	-- Highlight todo, notes, etc in comments
 	{
 		"folke/todo-comments.nvim",
