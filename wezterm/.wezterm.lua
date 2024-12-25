@@ -2,7 +2,7 @@
 local wezterm = require("wezterm")
 
 return {
-
+	-- default_prog = { "cmd", "for /f 'tokens=*' %i in ('opam env') do @%i" },
 	color_scheme = "Catppuccin Macchiato",
 	-- font = wezterm.font("JetBrains Mono NL"),
 	font_size = 16,
@@ -11,15 +11,20 @@ return {
 	leader = { key = "w", mods = "ALT", timeout_milliseconds = 1000 },
 
 	keys = {
-		{ key = "|", mods = "LEADER", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+		{ key = "\\", mods = "LEADER", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
 		{ key = "-", mods = "LEADER", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
 
 		{ key = "q", mods = "LEADER", action = wezterm.action.CloseCurrentPane({ confirm = true }) },
 
-		{ key = "h", mods = "LEADER", action = wezterm.action.ActivatePaneDirection("Left") }, -- Move left
-		{ key = "l", mods = "LEADER", action = wezterm.action.ActivatePaneDirection("Right") }, -- Move right
-		{ key = "k", mods = "LEADER", action = wezterm.action.ActivatePaneDirection("Up") }, -- Move up
+		{ key = "h", mods = "LEADER", action = wezterm.action.ActivatePaneDirection("Left") },
+		{ key = "l", mods = "LEADER", action = wezterm.action.ActivatePaneDirection("Right") },
+		{ key = "k", mods = "LEADER", action = wezterm.action.ActivatePaneDirection("Up") },
 		{ key = "j", mods = "LEADER", action = wezterm.action.ActivatePaneDirection("Down") },
+
+		{ key = "LeftArrow", mods = "LEADER", action = wezterm.action.AdjustPaneSize({ "Left", 7 }) },
+		{ key = "RightArrow", mods = "LEADER", action = wezterm.action.AdjustPaneSize({ "Right", 7 }) },
+		{ key = "UpArrow", mods = "LEADER", action = wezterm.action.AdjustPaneSize({ "Up", 4 }) },
+		{ key = "DownArrow", mods = "LEADER", action = wezterm.action.AdjustPaneSize({ "Down", 4 }) },
 
 		{ key = "c", mods = "LEADER", action = wezterm.action.SpawnTab("DefaultDomain") },
 
