@@ -656,20 +656,30 @@ require("lazy").setup({
 			})
 		end,
 	},
-	-- {
-	--   'chriskempson/base16-vim',
-	--   priority = 1000,
-	--   init = function()
-	--     vim.cmd.colorscheme 'base16-gruvbox-dark-hard'
-	--   end,
-	-- },
-	{
-		"EdenEast/nightfox.nvim",
-		priority = 1000,
-		init = function()
-			vim.cmd.colorscheme("carbonfox")
-		end,
-	},
+	  -- lua/plugins/rose-pine.lua
+  {
+    'rose-pine/neovim',
+    name = 'rose-pine',
+    config = function()
+      vim.cmd 'colorscheme rose-pine'
+      vim.cmd 'highlight Normal guibg=black'
+    end,
+  },
+  -- {
+  --   'chriskempson/base16-vim',
+  --   priority = 1000,
+  --   init = function()
+  --     vim.cmd.colorscheme 'base16-gruvbox-dark-hard'
+  --   end,
+  -- },
+  -- {
+  --   'EdenEast/nightfox.nvim',
+  --   priority = 1000,
+  --   init = function()
+  --     vim.cmd.colorscheme 'carbonfox'
+  --   end,
+  -- },
+
 	-- Highlight todo, notes, etc in comments
 	{
 		"folke/todo-comments.nvim",
