@@ -1,7 +1,10 @@
-GlazeWV
+GlazeWM
 =======
 1. Installation: https://github.com/glzr-io/GlazeWM/release
-2. Config File kopieren nach: %userprofile%\.glzr\glazewm\config.yaml
+2. Glaze und Zebar starten
+3. Config File kopieren nach: %userprofile%\.glzr\glazewm\config.yaml
+3. Manu Files kopieren nach: %userprofile%\.glzr\zebar\starter\...
+
    
 nvim
 ====
