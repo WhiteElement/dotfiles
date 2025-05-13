@@ -1,3 +1,8 @@
+fzfcd Doskey
+============
+1. Im Regedit einen neuen Eintrag (Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor) namens AutoRun hinzufügen
+2. Als Wert folgendes setzen >>doskey fzfcd=@for /f "delims=" %f in ('fzf') do @cd /d "%~dpf"<<
+
 GlazeWM
 =======
 1. Installation: https://github.com/glzr-io/GlazeWM/release
