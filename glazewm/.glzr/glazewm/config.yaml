@@ -221,7 +221,7 @@ keybindings:
 
   # Change the focused window to be tiling.
   - commands: ['toggle-tiling']
-    bindings: ['alt+t']
+    bindings: ['alt+g']
 
   # Change the focused window to be fullscreen.
   - commands: ['toggle-fullscreen']
@@ -233,7 +233,7 @@ keybindings:
 
   # Close focused window.
   - commands: ['close']
-    bindings: ['alt+shift+q']
+    bindings: ['alt+shift+c']
 
   # Kill GlazeWM process safely.
   - commands: ['wm-exit']
@@ -265,23 +265,23 @@ keybindings:
 
   # Change focus to a workspace defined in `workspaces` config.
   - commands: ['focus --workspace 1']
-    bindings: ['alt+a']
+    bindings: ['alt+q']
   - commands: ['focus --workspace 2']
-    bindings: ['alt+s']
+    bindings: ['alt+w']
   - commands: ['focus --workspace 3']
-    bindings: ['alt+d']
+    bindings: ['alt+e']
   - commands: ['focus --workspace 4']
-    bindings: ['alt+f']
+    bindings: ['alt+r']
   - commands: ['focus --workspace 5']
-    bindings: ['alt+g']
+    bindings: ['alt+t']
   - commands: ['focus --workspace 6']
-    bindings: ['alt+h']
+    bindings: ['alt+z']
   - commands: ['focus --workspace 7']
-    bindings: ['alt+j']
+    bindings: ['alt+u']
   - commands: ['focus --workspace 8']
-    bindings: ['alt+k']
+    bindings: ['alt+i']
   - commands: ['focus --workspace 9']
-    bindings: ['alt+l']
+    bindings: ['alt+o']
 
   # Move the focused window's parent workspace to a monitor in a given
   # direction.
@@ -296,20 +296,20 @@ keybindings:
 
   # Move focused window to a workspace defined in `workspaces` config.
   - commands: ['move --workspace 1', 'focus --workspace 1']
-    bindings: ['alt+shift+a']
+    bindings: ['alt+shift+q']
   - commands: ['move --workspace 2', 'focus --workspace 2']
-    bindings: ['alt+shift+s']
+    bindings: ['alt+shift+w']
   - commands: ['move --workspace 3', 'focus --workspace 3']
-    bindings: ['alt+shift+d']
+    bindings: ['alt+shift+e']
   - commands: ['move --workspace 4', 'focus --workspace 4']
-    bindings: ['alt+shift+f']
+    bindings: ['alt+shift+r']
   - commands: ['move --workspace 5', 'focus --workspace 5']
-    bindings: ['alt+shift+g']
+    bindings: ['alt+shift+t']
   - commands: ['move --workspace 6', 'focus --workspace 6']
-    bindings: ['alt+shift+h']
+    bindings: ['alt+shift+z']
   - commands: ['move --workspace 7', 'focus --workspace 7']
-    bindings: ['alt+shift+j']
+    bindings: ['alt+shift+u']
   - commands: ['move --workspace 8', 'focus --workspace 8']
-    bindings: ['alt+shift+k']
+    bindings: ['alt+shift+i']
   - commands: ['move --workspace 9', 'focus --workspace 9']
-    bindings: ['alt+shift+k']
+    bindings: ['alt+shift+o']
