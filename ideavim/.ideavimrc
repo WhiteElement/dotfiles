@@ -79,9 +79,11 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
 
 set NERDTree
-let g:NERDTreeMapActivateNode='l'
-let g:NERDTreeMapJumpParent='h'
-let g:NERDTreeMapNewFile='%'
-let g:NERDTreeMapNewDir='d'
-let g:NERDTreeMapDelete='D'
+nnoremap - :NERDTreeToggle<CR>
 
+"let g:NERDTreeClose='q'
+" let g:NERDTreeMapActivateNode='l'
+" let g:NERDTreeMapJumpParent='h'
+"let g:NERDTreeMapNewFile='%'
+" let g:NERDTreeMapNewDir='d'
+" let g:NERDTreeMapDelete='D'
