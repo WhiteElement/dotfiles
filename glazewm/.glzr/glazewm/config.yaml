@@ -129,6 +129,8 @@ workspaces:
   - name: '7'
   - name: '8'
   - name: '9'
+    bind_to_monitor: 0
+    keep_alive: true
 
 window_rules:
   - commands: ['ignore']
