@@ -1,3 +1,7 @@
+Ergodox
+=======
+1. Keymapp downloaden (https://www.zsa.io/flash)
+
 fzfcd Doskey
 ============
 1. Im Regedit einen neuen Eintrag (Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor) namens AutoRun hinzufügen
@@ -10,7 +14,6 @@ GlazeWM
 3. Config File kopieren nach: %userprofile%\.glzr\glazewm\config.yaml
 3. Manu Files kopieren nach: %userprofile%\.glzr\zebar\starter\...
 
-   
 nvim
 ====
 1. Installieren
