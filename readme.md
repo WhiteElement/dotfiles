@@ -1,6 +1,6 @@
-Ergodox
-=======
-1. Keymapp downloaden (https://www.zsa.io/flash)
+Keyboard Layouts
+===============
+1. Beide Keyboard Layouts installieren
 
 fzfcd Doskey
 ============
@@ -24,7 +24,6 @@ wezterm
 1. Installieren
 2. .wezterm.lua nach "C:\Users\manue\.wezterm.lua" kopieren
 
-yazi
-====
-1. Installieren
-2. Theme ablegen unter roaming/yazi/config/theme.toml
+ideavim
+=======
+1. .ideavimrc in C:\Users\manue überschreiben

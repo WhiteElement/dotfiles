@@ -91,6 +91,14 @@ vim.keymap.set('n', '<leader>wl', '<C-w><C-l>', { desc = 'Move focus to the righ
 vim.keymap.set('n', '<leader>wj', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<leader>wk', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- Jump to next/previous Error
+vim.keymap.set('n', '<leader>e', function()
+  vim.diagnostic.goto_next { severity = vim.diagnostic.severity.ERROR }
+end, { desc = 'Jump to next LSP error' })
+vim.keymap.set('n', '<leader>E', function()
+  vim.diagnostic.goto_prev { severity = vim.diagnostic.severity.ERROR }
+end, { desc = 'Jump to previous LSP error' })
+
 -- Yank to system clipboard in all modes
 vim.keymap.set('', '<leader>y', '"+y', { noremap = true })
 -- Yank to system clipboard in visual mode
@@ -448,9 +456,6 @@ require('lazy').setup({
         -- But for many setups, the LSP (`tsserver`) will work just fine
         -- tsserver = {},
         --
-        zls = {
-          cmd = { 'C:/Program Files/Zls/zls.exe' },
-        },
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
@@ -551,9 +556,14 @@ require('lazy').setup({
     -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
     lazy = false,
     config = function()
-      require('oil').setup()
-      vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open Parent Directory' })
+      require('oil').setup {
+        view_options = {
+          -- Show files and directories that start with "."
+          show_hidden = true,
+        },
+      }
     end,
+    vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open Parent Directory' }),
   },
 
   { -- Autocompletion
