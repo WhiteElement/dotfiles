@@ -22,8 +22,8 @@ nvim
 wezterm
 =======
 1. Installieren
-2. .wezterm.lua nach "C:\Users\manue\.wezterm.lua" kopieren
+2. .wezterm.lua nach "C:\Users\xxx\\.wezterm.lua" kopieren
 
 ideavim
 =======
-1. .ideavimrc in C:\Users\manue überschreiben
+1. .ideavimrc in C:\Users\xxx\ überschreiben/verschieben
