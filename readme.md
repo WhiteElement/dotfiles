@@ -24,6 +24,7 @@ wezterm
 1. Installieren
 2. .wezterm.lua nach "C:\Users\xxx\\.wezterm.lua" kopieren
 
-ideavim
+Intellij
 =======
-1. .ideavimrc in C:\Users\xxx\ überschreiben/verschieben
+1. .ideavimrc(IntelliJ) in C:\Users\xxx\ überschreiben/verschieben
+Optional: Unter Intellij gibt es einen Ordner mit settings.zip für alle Einstellungen
