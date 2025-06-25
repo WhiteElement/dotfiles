@@ -2,11 +2,6 @@ Keyboard Layouts
 ===============
 1. Beide Keyboard Layouts installieren
 
-fzfcd Doskey
-============
-1. Im Regedit einen neuen Eintrag (Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor) namens AutoRun hinzufügen
-2. Als Wert folgendes setzen >>doskey fzfcd=@for /f "delims=" %f in ('fzf') do @cd /d "%~dpf"<<
-
 GlazeWM
 =======
 1. Installation: https://github.com/glzr-io/GlazeWM/release
@@ -21,6 +16,7 @@ nvim
 
 wezterm
 =======
+0. Vorraussetzungen: FD & FZF installiert + als Umgebungsvariable
 1. Installieren
 2. .wezterm.lua nach "C:\Users\xxx\\.wezterm.lua" kopieren
 
