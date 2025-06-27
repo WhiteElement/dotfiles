@@ -46,8 +46,8 @@ config.keys = {
 	-- Workspace (tmux session) switching
 	{ key = "s", mods = "LEADER", action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) }, -- Ctrl+a s to list workspaces
 	{
-		key = "W",
-		mods = "LEADER|SHIFT",
+		key = "w",
+		mods = "LEADER",
 		action = act.PromptInputLine({
 			description = "Enter name for new workspace",
 			action = wezterm.action_callback(function(window, pane, line)
@@ -58,37 +58,25 @@ config.keys = {
 		}),
 	}, -- Ctrl+a W to create/switch workspace
 	{
-            key = "w",
-            mods = "LEADER",
-            action = act.PromptInputLine({
-                  description = "Enter name for new workspace",
-                  action = wezterm.action_callback(function(window, pane, line)
-                        if line then
-                              window:perform_action(act.SwitchToWorkspace({ name = line }), pane)
-                        end
-                  end),
-            }),
-      }, -- Ctrl+a W to create/switch workspace
-      {
-            key = "d",
-            mods = "LEADER",
-            action = wezterm.action.Multiple({
-                  wezterm.action.SendString(
-                        'for /f "delims=" %d in (\'fd -t d -H -E Windows --absolute-path ^| fzf\') do cd /d "%d" && nvim .'
-                  ),
-                  wezterm.action.SendKey({ key = "Enter" }),
-            }),
-      },
-      {
-            key = "f",
-            mods = "LEADER",
-            action = wezterm.action.Multiple({
-                  wezterm.action.SendString(
-                        'for /f "delims=" %d in (\'fd -t f -H -E Windows --absolute-path ^| fzf\') do cd /d "%~dpd" && nvim "%d"'
-                  ),
-                  wezterm.action.SendKey({ key = "Enter" }),
-            }),
-      }
+		key = "d",
+		mods = "LEADER",
+		action = wezterm.action.Multiple({
+			wezterm.action.SendString(
+				'for /f "delims=" %d in (\'fd -t d -H -E Windows --absolute-path ^| fzf\') do cd /d "%d" && nvim .'
+			),
+			wezterm.action.SendKey({ key = "Enter" }),
+		}),
+	},
+	{
+		key = "f",
+		mods = "LEADER",
+		action = wezterm.action.Multiple({
+			wezterm.action.SendString(
+				'for /f "delims=" %d in (\'fd -t f -H -E Windows --absolute-path ^| fzf\') do cd /d "%~dpd" && nvim "%d"'
+			),
+			wezterm.action.SendKey({ key = "Enter" }),
+		}),
+	},
 }
 
 -- Basic visual settings to match tmux aesthetics
