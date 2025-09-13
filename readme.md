@@ -23,4 +23,3 @@ wezterm
 Intellij
 =======
 1. .ideavimrc(IntelliJ) in C:\Users\xxx\ überschreiben/verschieben
-Optional: Unter Intellij gibt es einen Ordner mit settings.zip für alle Einstellungen

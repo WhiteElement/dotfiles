@@ -732,14 +732,14 @@ require('lazy').setup({
     end,
   },
   -- lua/plugins/rose-pine.lua
-  {
-    'rose-pine/neovim',
-    name = 'rose-pine',
-    config = function()
-      vim.cmd 'colorscheme rose-pine'
-      vim.cmd 'highlight Normal guibg=black'
-    end,
-  },
+  -- {
+  --   'rose-pine/neovim',
+  --   name = 'rose-pine',
+  --   config = function()
+  --     vim.cmd 'colorscheme rose-pine'
+  --     vim.cmd 'highlight Normal guibg=black'
+  --   end,
+  -- },
   -- {
   --   'chriskempson/base16-vim',
   --   priority = 1000,
@@ -747,6 +747,13 @@ require('lazy').setup({
   --     vim.cmd.colorscheme 'base16-gruvbox-dark-hard'
   --   end,
   -- },
+  {
+    'rebelot/kanagawa.nvim',
+    priority = 1000,
+    init = function()
+      vim.cmd.colorscheme 'kanagawa-wave'
+    end,
+  },
   -- {
   --   'EdenEast/nightfox.nvim',
   --   priority = 1000,
